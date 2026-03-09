@@ -1,0 +1,27 @@
+/*
+ * Glassmorphism Utilities
+ * Provides translucent backgrounds and blur effects for modern UI components.
+ */
+
+.glass-panel {
+  background: rgba(17, 20, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 228, 233, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card {
+  background: rgba(17, 20, 26, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 228, 233, 0.08);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  transition: background var(--transition-normal), border-color var(--transition-normal);
+}
+
+.glass-card:hover {
+  background: rgba(17, 20, 26, 0.6);
+  border-color: rgba(59, 130, 246, 0.3); /* Subtle blue border on hover */
+}

@@ -1,0 +1,6 @@
+- Home: /index.html
+- About: /src/about.html
+- Rules: /src/rules.html
+- Appeal: /src/appeal.html
+- Join Us: /src/join-us.html
+- Channel: https://t.me/TranssionCore

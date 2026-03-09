@@ -1,0 +1,24 @@
+/*
+ * Hover Effects
+ * Micro-animations and interaction states for UI elements.
+ */
+
+/* Subtle scale for interactive cards/buttons */
+.hover-scale {
+  transition: transform var(--transition-normal);
+  will-change: transform;
+}
+
+.hover-scale:hover {
+  transform: translateY(-4px);
+}
+
+/* Glow effect for primary actions */
+.hover-glow {
+  transition: box-shadow var(--transition-normal);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+

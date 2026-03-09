@@ -1,0 +1,137 @@
+/**
+ * Background and Effects Styles
+ */
+
+/* Global */
+body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    background-color: var(--color-black-base);
+    color: var(--color-white-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Dynamic Ambient bg */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle blue grid lines */
+    background-image: linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Advanced Ambient */
+.ambient-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -3;
+    /* Behind grid and gradients */
+}
+
+/* Ambient Orbs - Blur Effect */
+.ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    /* Massive blur for smooth glow */
+    opacity: 0.15;
+    /* Very subtle */
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Static Orbs */
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: #3b82f6;
+    top: -10%;
+    left: -10%;
+    animation: floatOrb 20s infinite ease-in-out alternate;
+}
+
+.orb-2 {
+    width: 600px;
+    height: 500px;
+    background: #1e3a8a;
+    bottom: -20%;
+    right: -10%;
+    animation: floatOrb 25s infinite ease-in-out alternate-reverse;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: #60a5fa;
+    top: 40%;
+    left: 60%;
+    animation: floatOrb 30s infinite ease-in-out alternate;
+}
+
+.orb-4 {
+    width: 500px;
+    height: 500px;
+    background: #2563eb;
+    bottom: 20%;
+    left: -15%;
+    animation: floatOrb 22s infinite ease-in-out alternate-reverse;
+}
+
+.orb-5 {
+    width: 350px;
+    height: 350px;
+    background: #93c5fd;
+    top: 10%;
+    right: 20%;
+    opacity: 0.1;
+    animation: floatOrb 28s infinite ease-in-out alternate;
+}
+
+/* Interactive Orb */
+.orb-interactive {
+    width: 300px;
+    height: 300px;
+    background: #3b82f6;
+    /* same blue as the static orbs */
+    opacity: 0.12;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.12s ease-out;
+    filter: blur(70px);
+}
+
+/* Orb Animation */
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(40px, 40px) scale(1.05);
+    }
+}

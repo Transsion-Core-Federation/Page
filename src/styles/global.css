@@ -1,0 +1,168 @@
+/*
+ * Global Stylesheet
+ * Integrates base resets, typography, and color variables.
+ * Palette: Blue, White, Black (Matte/Low-Contrast)
+ */
+
+:root {
+  /* Color Palette */
+  --color-black-base: #0a0c10;
+  --color-black-surface: #11141a;
+  --color-white-primary: #e2e4e9;
+  --color-white-secondary: #a1a6b0;
+  --color-blue-accent: #3b82f6;
+  --color-blue-dark: #1e3a8a;
+
+  /* Layout & Spacing */
+  --container-max-width: 1210px;
+  /* Increased by 10px */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Typography */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-blue-accent);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility Layouts */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* Compact section for inner pages (rules, about, appeal, join-us) */
+.section-page {
+  padding-top: calc(var(--spacing-xl) + 100px);
+  /* increased offset for floating pill navbar */
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Typography Utilities */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-white-primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.text-muted {
+  color: var(--color-white-secondary);
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/* -------------------------------------
+   Markdown & Content Typography Polish
+-------------------------------------- */
+h1,
+h2,
+h3 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child {
+  margin-top: 0;
+}
+
+p,
+.content {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-white-secondary);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: 1.5rem;
+  color: var(--color-white-secondary);
+}
+
+li {
+  margin-bottom: 4px;
+  /* Reduced from 0.5rem (8px) */
+  line-height: 1.6;
+}
+
+li::marker {
+  color: var(--color-blue-accent);
+}
+
+.code-block {
+  background: rgba(17, 20, 26, 0.6);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  border: 1px solid rgba(226, 228, 233, 0.05);
+}
+
+code {
+  font-family: monospace;
+  color: var(--color-blue-accent);
+  font-size: 0.9em;
+  padding: 0.2rem 0.4rem;
+  background: rgba(226, 228, 233, 0.05);
+  border-radius: 4px;
+}
+
+.code-block code {
+  color: var(--color-white-secondary);
+  font-size: 0.85em;
+  padding: 0;
+  background: transparent;
+}

@@ -1,0 +1,150 @@
+/**
+ * Card V2 - Base Styles
+ * Modular card component with variants for rules and appeal pages
+ */
+
+/* ---- BASE CARD V2 ---- */
+.card-v2 {
+  background: rgba(17, 20, 26, 0.5);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(226, 228, 233, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-v2:hover {
+  border-color: rgba(59, 130, 246, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- BASE CARD V2 HEADER ---- */
+.card-v2-header {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-blue-accent);
+  margin: 0;
+  padding: var(--spacing-lg);
+  background: rgba(59, 130, 246, 0.07);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  line-height: 1.4;
+  position: relative;
+}
+
+.card-v2-body {
+  padding: var(--spacing-lg);
+}
+
+/* ---- LANGUAGE SELECTOR MENU ---- */
+.card-lang-menu {
+  margin-left: auto;
+  position: relative;
+}
+
+.lang-menu-btn {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  padding: 4px 10px;
+  color: var(--color-blue-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-menu-btn:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: var(--color-white-primary);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: rgba(17, 20, 26, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 6px;
+  min-width: 140px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 100;
+  overflow: hidden;
+  animation: dropdownFade 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lang-dropdown.active {
+  display: block;
+}
+
+.lang-dropdown-option {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-white-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lang-dropdown-option:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-white-primary);
+}
+
+.lang-dropdown-option.active {
+  color: var(--color-blue-accent);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+/* ---- CARD V2 VARIANT: RULES ---- */
+.card-v2-rules {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.card-v2-rules .card-v2-header {
+  flex-shrink: 0;
+}
+
+.card-v2-rules .card-v2-header .card-lang-menu {
+  margin-left: auto;
+}
+
+/* ---- CARD V2 VARIANT: APPEAL ---- */
+.card-v2-appeal {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-v2-appeal .card-v2-header {
+  flex-shrink: 0;
+}
+
+.card-v2-appeal .card-v2-header .card-lang-menu {
+  margin-left: auto;
+}

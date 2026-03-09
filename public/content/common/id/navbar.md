@@ -1,0 +1,6 @@
+- Beranda: /index.html
+- Tentang: /src/about.html
+- Aturan: /src/rules.html
+- Banding: /src/appeal.html
+- Join Us: /src/join-us.html
+- Saluran: https://t.me/TranssionCore

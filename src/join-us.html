@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Moduler Stylesheets -->
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/common/background.css">
+    <link rel="stylesheet" href="../src/styles/effects/glass.css">
+    <link rel="stylesheet" href="../src/styles/common/navbar.css">
+    <link rel="stylesheet" href="../src/styles/common/langs-menu.css">
+    <link rel="stylesheet" href="../src/styles/common/button.css">
+    <link rel="stylesheet" href="../src/styles/common/card-v1.css">
+    <link rel="stylesheet" href="../src/styles/common/pages-header.css">
+    <link rel="stylesheet" href="../src/styles/common/footer.css">
+    <link rel="stylesheet" href="../src/styles/common/button.css">
+    <link rel="stylesheet" href="../src/styles/common/card-v1.css">
+    <link rel="stylesheet" href="../src/styles/join-us/join-us.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel" id="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="navbar-logo">
+                TCF<span>.</span>
+            </a>
+            <div class="navbar-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="rules.html" class="nav-link">Rules</a>
+                <a href="appeal.html" class="nav-link">Appeal</a>
+                <a href="join-us.html" class="btn btn-primary hover-scale active">Join Us</a>
+            </div>
+            <button class="navbar-toggle" aria-label="Menu" id="mobile-menu-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Floating Language Selector (Static) -->
+    <div id="global-lang-selector" class="floating-lang-selector">
+        <button class="lang-dropdown-btn">EN <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="lang-dropdown-menu">
+            <div class="lang-option active" data-lang="en"><span>EN</span></div>
+            <div class="lang-option" data-lang="id"><span>ID</span></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="section section-page">
+        <div class="container">
+            
+            <!-- Page Header -->
+            <header class="join-header" id="join-header-dynamic" data-source="../content/join-us/{lang}/header.md">
+                <!-- Content dynamically injected from JS -->
+            </header>
+
+            <div class="hubs-grid" id="dynamic-hub-container" data-source="../content/join-us/id/hubs.md">
+                <!-- Content dynamically injected from JS -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <!-- Content dynamically injected from JS -->
+        </div>
+    </footer>
+
+    <!-- Scripts —load in dependency order -->
+    <script src="../src/scripts/animation/scroll.js"></script>
+    <script src="../src/scripts/parser/md-parser.js"></script>
+    <script src="../src/scripts/render/global-lang.js"></script>
+    <script src="../src/scripts/render/card-lang.js"></script>
+    <script src="../src/scripts/render/md-render.js"></script>
+    <script src="../src/scripts/render/rules-renderer.js"></script>
+    <script src="../src/scripts/render/renderer.js"></script>
+    <script src="../src/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/**
+ * Footer Component Styles
+ */
+
+/* Base Footer Styles */
+.footer {
+  border-top: none;
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  /* Low opacity so blur has visible content behind it */
+  background: rgba(10, 12, 16, 0.4);
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  margin-top: var(--spacing-xl);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: none;
+  /* Layered premium shadow */
+  box-shadow:
+    0 -4px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Top row: brand left + nav columns right */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+/* Responsive */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* Brand block */
+.footer-brand {
+  max-width: 290px; /* Increased by 10px */
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-white-primary);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.02em;
+}
+
+.footer-logo span {
+  color: var(--color-blue-accent);
+}
+
+.footer-desc {
+  color: var(--color-white-secondary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Nav columns */
+.footer-nav {
+  display: flex;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 110px;
+}
+
+/* Column title */
+.footer-col-title {
+  color: var(--color-white-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Column links */
+.footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Link styles */
+.footer-link {
+  color: var(--color-white-secondary);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect */
+.footer-link:hover {
+  color: var(--color-white-primary);
+}
+
+/* Bottom copyright strip */
+.footer-bottom {
+  border-top: 1px solid rgba(226, 228, 233, 0.05);
+  padding-top: var(--spacing-lg);
+  text-align: justify;
+}
+
+/* Footer text */
+.footer-text {
+  color: var(--color-white-secondary);
+  font-size: 0.8rem;
+}

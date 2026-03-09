@@ -1,0 +1,48 @@
+/**
+ * Card V1
+ */
+
+
+/* Base Card V1 Styles */
+.card-v1 {
+  background: rgba(10, 12, 16, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: var(--spacing-lg);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Hover effect */
+.card-v1:hover {
+  background: rgba(10, 12, 16, 0.55);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Style for elements inside card-v1 */
+.card-v1 h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Style for paragraphs inside card-v1 */
+.card-v1 p {
+  color: var(--color-white-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}

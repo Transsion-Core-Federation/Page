@@ -1,0 +1,42 @@
+/*
+ * pages-header.css
+ * Unified styles for .header-page and .sub-header-page across ALL pages.
+ * Import this on every page that has a section header.
+ */
+
+/* ---- Main Page Title ---- */
+.header-page {
+  text-align: center;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+/* ---- Page Subtitle / Description ---- */
+.sub-header-page {
+  text-align: center !important;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+/* ---- Header Section Containers (non-selectable) ---- */
+.rules-header,
+.appeal-header,
+.about-header,
+.join-header {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  text-align: center;
+}
+
+/* ---- Per-page header paragraph overrides ---- */
+.rules-header p,
+.appeal-header p,
+.about-header p,
+.join-header p {
+  text-align: center;
+  max-width: 570px;
+  margin: 0 auto;
+}

@@ -1,0 +1,200 @@
+/*
+ * Rules Page Styles — Masonry / Bento Grid Layout
+ * Each rule is an individual card arranged in a varied column layout,
+ * with a sticky search bar at the top.
+ */
+
+/* ---- Page Header ---- */
+.rules-header {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(226, 228, 233, 0.06);
+}
+
+.rules-header h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: var(--spacing-md);
+  background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #a1a6b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.rules-header p {
+  color: var(--color-white-secondary);
+  font-size: 1.1rem;
+  max-width: 570px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ---- Search Bar (Integrated) ---- */
+.rules-search-wrap {
+  position: relative;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rules-search {
+  width: 100%;
+  background: rgba(226, 228, 233, 0.03);
+  border: 1px solid rgba(226, 228, 233, 0.08);
+  border-radius: 12px;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  font-size: 0.95rem;
+  font-family: var(--font-family-primary);
+  color: var(--color-white-primary);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.rules-search:focus {
+  border-color: var(--color-blue-accent);
+  background: rgba(226, 228, 233, 0.06);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.rules-search::placeholder {
+  color: var(--color-white-secondary);
+  opacity: 0.5;
+}
+
+.rules-search:focus {
+  border-color: var(--color-blue-accent);
+  background: rgba(10, 12, 16, 0.6);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.5),
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 25px rgba(59, 130, 246, 0.15);
+}
+
+.rules-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-white-secondary);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ---- Rules Grid via CSS Columns (Masonry effect) ---- */
+.rules-grid {
+  columns: 3 320px;
+  column-gap: var(--spacing-lg);
+  margin-top: var(--spacing-xxl);
+  width: 100%;
+}
+
+/* ---- RULES CARD V2 SPECIFIC ---- */
+
+/* Rules Section Title */
+.rules-section-title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rules-section-title::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-blue-accent);
+  flex-shrink: 0;
+  opacity: 0.7;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* ---- Rules Content Styling ---- */
+.rules-text {
+  color: var(--color-blue-accent);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  text-align: justify;
+  padding: var(--spacing-lg);
+}
+
+.rules-text h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-blue-accent);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rules-text h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-white-primary);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rules-text ul, .rules-text ol {
+  padding-left: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Tighter list gap */
+}
+
+.rules-text li {
+  margin-bottom: 1px; /* Minimal bottom margin */
+  line-height: 1.5;
+}
+
+.rules-text strong {
+  color: var(--color-white-primary);
+}
+
+.rules-text hr {
+  border: none;
+  border-bottom: 1px solid rgba(226, 228, 233, 0.08); /* Synchronized with header break */
+  margin: var(--spacing-lg) calc(var(--spacing-lg) * -1); /* Full width of card text area */
+  opacity: 1;
+}
+
+/* Timestamp styling – now correctly targets only timestamps */
+.rules-text .content-timestamp {
+  display: block;
+  margin-top: var(--spacing-md);
+  font-size: 0.75rem;
+  color: var(--color-white-secondary);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.accent-symbol {
+  color: var(--color-blue-accent);
+  filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.4));
+  font-weight: bold;
+}
+
+/* ---- No Results message ---- */
+.rules-no-results {
+  text-align: center;
+  color: var(--color-white-secondary);
+  padding: var(--spacing-xl);
+  font-size: 1rem;
+  display: none;
+}
+
+.rules-no-results.visible {
+  display: block;
+}

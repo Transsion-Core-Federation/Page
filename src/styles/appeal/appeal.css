@@ -1,0 +1,202 @@
+/*
+ * Appeal Page Styles — Redesigned
+ * Focused, trust-building layout for the FBAN appeal process.
+ */
+
+/* ---- Page-Level Layout ---- */
+.appeal-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  align-items: start;
+}
+
+/* ---- Alert / Warning Banner ---- */
+.appeal-alert {
+  background: rgba(239, 68, 68, 0.07);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 12px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.appeal-alert-icon {
+  flex-shrink: 0;
+  color: #ef4444;
+  margin-top: 2px;
+}
+
+.appeal-alert-text {
+  color: var(--color-white-secondary);
+  font-size: 0.925rem;
+  line-height: 1.7;
+}
+
+.appeal-alert-text strong {
+  color: #ef4444;
+}
+
+/* ---- Page Header ---- */
+.appeal-hero {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(226, 228, 233, 0.06);
+}
+
+.appeal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--color-blue-accent);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 100px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--spacing-md);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.appeal-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  margin-bottom: var(--spacing-md);
+  background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #a1a6b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.appeal-hero p {
+  color: var(--color-white-secondary);
+  font-size: 1.1rem;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ---- Glassy Island Cards ---- */
+.appeal-content-card {
+  background: rgba(17, 20, 26, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 228, 233, 0.07);
+  border-radius: 18px;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 12px 40px rgba(0, 0, 0, 0.3);
+  padding: var(--spacing-lg);
+}
+
+/* ---- APPEAL CARD V2 SPECIFIC ---- */
+
+/* Appeal Content Card Title */
+.appeal-content-card h3 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.appeal-content-card h3::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-blue-accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* ---- Appeal Content Styling ---- */
+.appeal-content-card p,
+.appeal-content-card ul,
+.appeal-content-card ol,
+.appeal-content-card pre {
+  margin-left: var(--spacing-lg);
+  margin-right: var(--spacing-lg);
+}
+
+.appeal-content-card p:first-of-type {
+  margin-top: var(--spacing-md);
+}
+
+.appeal-content-card p {
+  color: var(--color-white-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-sm);
+}
+
+.appeal-content-card ul, .appeal-content-card ol {
+  color: var(--color-white-secondary);
+  padding-left: 1.4rem;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.appeal-content-card li {
+  line-height: 1.6;
+  font-size: 0.925rem;
+  margin-bottom: 4px;
+}
+
+.appeal-content-card em {
+  font-style: italic;
+  color: var(--color-white-secondary);
+  opacity: 0.9;
+}
+
+.appeal-content-card strong {
+  color: var(--color-white-primary);
+  font-weight: 700;
+}
+
+/* Premium Code Blocks */
+.appeal-content-card pre {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.85rem;
+  width: calc(100% - (var(--spacing-lg) * 2));
+}
+
+/* Handle the bottom padding */
+.appeal-content-card > *:last-child {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ---- CTA Footer row ---- */
+.appeal-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+/* Sync Symbols */
+.accent-symbol {
+  color: var(--color-blue-accent);
+  font-weight: 800;
+  margin-right: 4px;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
