@@ -13,6 +13,24 @@
  *   7. main.js  ← (this file)
  */
 
+// Import CSS files for Vite to bundle them
+import '../styles/global.css';
+import '../styles/common/background.css';
+import '../styles/effects/glass.css';
+import '../styles/effects/hover.css';
+import '../styles/common/navbar.css';
+import '../styles/common/langs-menu.css';
+import '../styles/common/button.css';
+import '../styles/common/card-v1.css';
+import '../styles/common/card-v2.css';
+import '../styles/common/pages-header.css';
+import '../styles/common/footer.css';
+import '../styles/home/home.css';
+import '../styles/about/about.css';
+import '../styles/appeal/appeal.css';
+import '../styles/join-us/join-us.css';
+import '../styles/rules/rules.css';
+
 document.addEventListener('DOMContentLoaded', async () => {
     initGlobalLanguage();
     initAmbientBackground();
