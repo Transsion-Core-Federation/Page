@@ -30,6 +30,7 @@ function urlRewritePlugin() {
 }
 
 export default defineConfig({
+  base: '/',
   root: './',
   plugins: [urlRewritePlugin()],
   build: {
